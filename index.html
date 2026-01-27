@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mgr. Ján Forgáč - Prvý zástupca primátora mesta Trenčín</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            padding: 32px 0;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .header-profile {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .header-image {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+        }
+
+        .header-info h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .header-info p {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+            display: none;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 32px;
+            transition: color 0.2s;
+            display: none;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 64px 0;
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            min-width: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about {
+            padding: 64px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .about h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 64px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            color: #666;
+            min-width: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .contact-link {
+            font-size: 16px;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: #0066cc;
+        }
+
+        .contact-link[href^="tel:"]::before {
+            content: '';
+            display: inline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid #e5e5e5;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+                padding: 0 20px;
+            }
+
+            nav {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .about,
+            .contact {
+                padding: 40px 0;
+            }
+
+            .about h2,
+            .contact h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header {
+                border-bottom: none;
+            }
+
+            .hero {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="header-profile">
+                <img src="profil.jpg" alt="fotografia jána forgáča v modrej košeli na zelenom rozmazanom pozadí" class="header-image">
+                <div class="header-info">
+                    <h2>Mgr. Ján Forgáč</h2>
+                    <p>Prvý zástupca primátora mesta Trenčín</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">O mne</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2>O mne</h2>
+            <p>Vo svojej práci sa zameriavam najmä na oblasti životného prostredia, dopravy a výstavby, územného plánovania a dlhodobej stratégie mesta, ako aj na investície a správu mestského majetku. Zároveň však vnímam samosprávu ako jeden celok, preto sa venujem aj ďalším témam, ktoré ovplyvňujú každodenný život v meste — vrátane vzdelávania.</p>
+            <p>Od roku 2011 do 2014 som bol vedúcim Stavebného úradu v Trenčíne a od konca roku 2014 dodnes som poslancom za mestskú časť Juh a prvým zástupcom primátora mesta Trenčín. Mám na starosti aj komunikáciu mestského úradu smerom k Mestskému zastupiteľstvu, k poslancom a predstaviteľom iných samospráv a štátnych úradov.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Kontakt</h2>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:jan.forgac@trencin.sk" class="contact-link">jan.forgac@trencin.sk</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Telefón</span>
+                    <a href="tel:+421902911290" class="contact-link">+421 902 911 290</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link based on scroll position
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.clientHeight;
+
+                if (window.scrollY >= top - 100 && window.scrollY < top + height) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+                    if (activeLink) {
+                        activeLink.style.color = '#1a1a1a';
+                        activeLink.style.fontWeight = '600';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
